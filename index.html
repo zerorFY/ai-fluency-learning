@@ -1,47 +1,56 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="AI Fluency Framework & Foundations 学习系统 — 基于 Anthropic Academy 课程的完整学习、复习与自测平台。">
-  <title>AI Fluency 学习系统</title>
+  <meta name="description" content="AI Fluency Framework & Foundations Learning System — A complete study, review, and self-test platform based on the Anthropic Academy course.">
+  <title>AI Fluency Learning System</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-  <!-- ===== 顶部导航 ===== -->
+  <!-- ===== Top Navigation ===== -->
   <header class="topnav" id="topnav">
     <div class="topnav-brand" onclick="router.go('home')">
       <span class="brand-icon">🧠</span>
-      <span class="brand-text">AI Fluency 学习系统</span>
+      <span class="brand-text" id="brandText">AI Fluency Learning System</span>
     </div>
-    <nav class="topnav-links">
-      <a class="nav-link active" data-page="home" onclick="router.go('home')">🗺️ 课程地图</a>
+    <nav class="topnav-links" id="topnavLinks">
+      <a class="nav-link active" data-page="home" onclick="router.go('home')">🗺️ Course Map</a>
       <a class="nav-link" data-page="4ds" onclick="router.go('4ds')">🧩 4Ds</a>
-      <a class="nav-link" data-page="goals" onclick="router.go('goals')">🎯 四重目标</a>
-      <a class="nav-link" data-page="review" onclick="router.go('review')">📝 自测</a>
+      <a class="nav-link" data-page="goals" onclick="router.go('goals')">🎯 Four Goals</a>
+      <a class="nav-link" data-page="review" onclick="router.go('review')">📝 Self-Test</a>
     </nav>
     <div class="topnav-right">
+      <div class="lang-switch" id="langSwitch">
+        <span class="lang-globe">🌐</span>
+        <button class="lang-btn" data-lang="zh" onclick="switchLang('zh')">中文</button>
+        <button class="lang-btn active" data-lang="en" onclick="switchLang('en')">EN</button>
+      </div>
       <div class="mode-switch" id="modeSwitch">
-        <button class="mode-btn active" data-mode="browse" onclick="switchMode('browse')">浏览</button>
-        <button class="mode-btn" data-mode="study" onclick="switchMode('study')">精读</button>
+        <button class="mode-btn active" data-mode="browse" onclick="switchMode('browse')">Browse</button>
+        <button class="mode-btn" data-mode="study" onclick="switchMode('study')">Deep Study</button>
       </div>
       <div class="search-wrap">
-        <input type="text" id="searchInput" class="search-input" placeholder="搜索知识点…" autocomplete="off">
+        <input type="text" id="searchInput" class="search-input" placeholder="Search topics…" autocomplete="off">
         <div class="search-dropdown" id="searchDropdown"></div>
       </div>
     </div>
   </header>
 
-  <!-- ===== 主内容 ===== -->
+  <!-- ===== Main Content ===== -->
   <main class="main" id="main"></main>
 
-  <!-- ===== 数据 ===== -->
+  <!-- ===== Data ===== -->
+  <script src="js/i18n.js"></script>
   <script src="js/data.js"></script>
   <script src="js/data2.js"></script>
   <script src="js/data3.js"></script>
+  <script src="js/data_en.js"></script>
+  <script src="js/data_en2.js"></script>
+  <script src="js/data_en3.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

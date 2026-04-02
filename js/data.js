@@ -17,24 +17,33 @@ const COURSE_DATA = {
       name: 'Automation（自动化）',
       nameZh: '自动化',
       description: '你告诉 AI 要做什么，AI 执行。例如总结文档、写邮件、生成图片、做旅行行程。',
+      descriptionEn: 'An AI assistant completes a specific task based on your instructions. For example, summarizing a document, drafting an email, creating an image, or planning a trip itinerary.',
       detail: '前提往往是：你已经比较清楚想要什么结果。若你的目标本身还模糊，它就不一定是最好起点。',
-      officeExample: '重复规则明确的任务偏向 automation'
+      detailEn: 'It works well when you have a clear outcome in mind, but can be challenging when you are not quite sure what you are actually looking for.',
+      officeExample: '重复规则明确的任务偏向 automation',
+      officeExampleEn: 'Repetitive, rule-based tasks lean toward automation'
     },
     {
       id: 'augmentation',
       name: 'Augmentation（增强）',
       nameZh: '增强协作',
       description: '你与 AI 共同完成任务，AI 不只是替你做，而是作为创意思考伙伴帮助你推进。例如角色设定、产品思考、复杂研究课题、架构问题。',
+      descriptionEn: 'You and the AI collaborate to complete a task together. The AI becomes a creative thinking and problem-solving partner. For example, developing a character for a story, working through a difficult architectural problem, or formulating thoughts on a complex research topic.',
       detail: '更适合问题未定型、需要探索、需要反复来回打磨的场景。它体现出 AI 作为"认知放大器"的价值。',
-      officeExample: '流程设计与方案探索做 augmentation'
+      detailEn: 'This approach works best when solutions are not straightforward and you need space to explore and experiment. The AI augments your creativity and thinking.',
+      officeExample: '流程设计与方案探索做 augmentation',
+      officeExampleEn: 'Process design and solution exploration lean toward augmentation'
     },
     {
       id: 'agency',
       name: 'Agency（代理）',
       nameZh: '代理执行',
       description: 'AI 代表你行动。你不再逐条编写动作，而是为其设定知识、规则、行为模式或目标。例子包括邮件分类、初步响应、网站互动角色、游戏角色等。',
+      descriptionEn: 'AI works independently on your behalf. Rather than defining specific actions, you establish the AI\'s knowledge and behavior patterns. Examples include email categorization, initial responses, interactive website experiences, or dynamically interactive game characters.',
       detail: '本质是：你从"写脚本的人"转向"设定愿景与边界的人"。',
-      officeExample: '连续运行的流程节点做 agency'
+      detailEn: 'You become less like a script writer giving exact directions and more like a director setting a vision.',
+      officeExample: '连续运行的流程节点做 agency',
+      officeExampleEn: 'Continuously running process nodes lean toward agency'
     }
   ],
 
@@ -45,7 +54,9 @@ const COURSE_DATA = {
       name: 'Effective',
       nameZh: '有效',
       description: '你是否真正达成目标',
+      descriptionEn: 'Are you truly achieving your goals?',
       detail: '强调的是结果质量——AI 的产出是否真正解决了问题、满足了需求。不是"看起来像答案"，而是"确实能用"。',
+      detailEn: 'Emphasizes outcome quality — whether the AI\'s output truly solves the problem and meets the need. Not just "looks like an answer," but "actually works."',
       relatedDs: ['Delegation', 'Description', 'Discernment'],
       icon: '🎯'
     },
@@ -54,7 +65,9 @@ const COURSE_DATA = {
       name: 'Efficient',
       nameZh: '高效',
       description: '过程中是否少走弯路、少浪费时间和精力',
+      descriptionEn: 'Are you minimizing wasted time and energy?',
       detail: '关注资源投入与产出比——时间、精力、成本。好的 AI 协作不应该让你花更多时间在修补上。',
+      detailEn: 'Focuses on the ratio of resources invested to output — time, effort, and cost. Effective AI collaboration should not result in spending more time on corrections.',
       relatedDs: ['Delegation', 'Description'],
       icon: '⚡'
     },
@@ -63,7 +76,9 @@ const COURSE_DATA = {
       name: 'Ethical',
       nameZh: '合乎伦理',
       description: '是否诚实、公平、合宜',
+      descriptionEn: 'Is it honest, fair, and appropriate?',
       detail: '涉及信息真实性、偏见控制、透明度、对他人的公平性。AI 输出发给客户/同事/公众前，你是否确认了它的公正与准确？',
+      detailEn: 'Involves information truthfulness, bias control, transparency, and fairness to others. Before sending AI output to clients, colleagues, or the public, have you confirmed its accuracy and fairness?',
       relatedDs: ['Diligence', 'Discernment'],
       icon: '⚖️'
     },
@@ -72,7 +87,9 @@ const COURSE_DATA = {
       name: 'Safe',
       nameZh: '安全',
       description: '是否保护自己和他人的隐私与安全',
+      descriptionEn: 'Are you protecting privacy and security — yours and others\'?',
       detail: '数据保护、隐私边界、系统安全、对外发送前的人工审核。尤其在自动化场景中，安全是不可妥协的底线。',
+      detailEn: 'Encompasses data protection, privacy boundaries, system security, and human review before external distribution. Especially in automation scenarios, safety is a non-negotiable baseline.',
       relatedDs: ['Diligence'],
       icon: '🛡️'
     }
@@ -88,20 +105,36 @@ const COURSE_DATA = {
       color: '#4F46E5',
       icon: '🧭',
       oneLiner: '决定"谁做什么"',
+      oneLinerEn: 'Deciding "when should humans do work and when should AI"',
       definition: '不是简单地"把能自动化的都自动化"，而是同时理解目标、任务结构、人的能力、AI 的能力和风险边界后，做出最合适的分工决策。',
+      definitionEn: 'Not simply "automate everything possible," but understanding goals, task structure, human capabilities, AI capabilities, and risk boundaries to make the most appropriate division of work.',
       components: [
         { name: 'Problem Awareness（问题认知）', desc: '我到底要完成什么？我要解决什么问题？我心中的成功长什么样？' },
         { name: 'Platform Awareness（平台认知）', desc: '不同模型、平台、应用在速度、深度、准确性、创造性、工具连接能力上差异很大。' },
         { name: 'Task Delegation（任务分工）', desc: '哪些步骤自动化最好？哪些步骤人机协作？哪些判断必须保留给人？' }
+      ],
+      componentsEn: [
+        { name: 'Problem Awareness', desc: 'What exactly do I need to accomplish? What problem am I solving? What does success look like?' },
+        { name: 'Platform Awareness', desc: 'Different models, platforms, and applications vary greatly in speed, depth, accuracy, creativity, and tool integration.' },
+        { name: 'Task Delegation', desc: 'Which steps are best automated? Which benefit from human-AI collaboration? Which judgments must remain with humans?' }
       ],
       commonMisconceptions: [
         'Delegation = 把能自动化的都自动化。课程没有这么说，它强调思考何处应保留人类判断。',
         '先试模型，再说需求。更稳妥的顺序恰恰相反。',
         '委派只发生在项目开始。实际上随着项目推进，你会不断重新委派。'
       ],
+      commonMisconceptionsEn: [
+        'Delegation = automate everything you can. The course emphasizes thinking about where human judgment should be preserved.',
+        'Try the model first, define needs later. A more reliable approach is the reverse.',
+        'Delegation only happens at the start. In reality, you constantly re-delegate as projects evolve.'
+      ],
       officeMapping: [
         '可以把 Delegation 直接套进项目启动：先画流程，再标出耗时步骤、判断步骤、数据步骤、例外步骤，最后决定哪些能给 AI。',
         '面对新工具时，不要问"哪个最好"，而要问"哪个最适合我这一步"。'
+      ],
+      officeMappingEn: [
+        'Apply Delegation directly to project kickoff: map the workflow, identify time-consuming steps, judgment steps, data steps, and exception steps, then decide which can be given to AI.',
+        'When facing new tools, don\'t ask "which is best" — ask "which is best for this step."'
       ]
     },
     {
@@ -112,20 +145,36 @@ const COURSE_DATA = {
       color: '#0891B2',
       icon: '📝',
       oneLiner: '决定"怎么告诉 AI 去做"',
+      oneLinerEn: 'Deciding "how do we communicate clearly with AI systems"',
       definition: '不是"把 prompt 写长一点"，而是把输出、方法和协作行为都设计清楚。Description 是人与 AI 沟通的能力。',
+      definitionEn: 'Not "make the prompt longer," but designing the output, method, and collaborative behavior clearly. Description is the ability to communicate effectively with AI.',
       components: [
         { name: 'Product Description（产品/输出描述）', desc: '你要说明想让 AI 产出什么：任务是什么、背景是什么、输出要什么格式、面向谁、风格如何。' },
         { name: 'Process Description（过程描述）', desc: '有时你不仅要说明终点，还要说明 AI 应如何走过去。包括总体原则、逐步流程、具体示例等。' },
         { name: 'Performance Description（表现/互动描述）', desc: '你需要什么样的思考伙伴？是发散还是收敛？要挑战你还是顺着你？要详细解释还是简短直给？' }
+      ],
+      componentsEn: [
+        { name: 'Product Description', desc: 'Specify what you want AI to produce: the task, context, output format, audience, and tone.' },
+        { name: 'Process Description', desc: 'Sometimes you need to specify not just the endpoint but how AI should get there — principles, step-by-step procedures, examples.' },
+        { name: 'Performance Description', desc: 'What kind of thinking partner do you need? Divergent or convergent? Challenging or supportive? Detailed explanations or concise answers?' }
       ],
       commonMisconceptions: [
         'Description = 越长越好。并不是越长越好，而是相关信息要完整、清楚、可执行。',
         '只要说交付物即可。很多复杂任务里，过程和互动方式同样重要。',
         '只适合文字任务。实际上设计、分析、编程、辅导、规划都需要 Description。'
       ],
+      commonMisconceptionsEn: [
+        'Description = longer is better. It\'s not about length; it\'s about completeness, clarity, and actionability of relevant information.',
+        'Just specify the deliverable. For many complex tasks, process and interaction style are equally important.',
+        'Only applies to text tasks. In reality, design, analysis, programming, tutoring, and planning all require Description.'
+      ],
       officeMapping: [
         '写提示时，最好不要只问"我要什么结果"，还要同步想"它怎么做比较好"以及"它该怎么跟我配合"。',
         '如果做 agent 或系统设计，Description 的思维会变成：输出规范、流程规范、行为规范。'
+      ],
+      officeMappingEn: [
+        'When writing prompts, don\'t just ask "what result do I want" — also consider "how should it approach this" and "how should it collaborate with me."',
+        'For agent or system design, Description thinking becomes: output specifications, process specifications, behavior specifications.'
       ]
     },
     {
@@ -136,20 +185,36 @@ const COURSE_DATA = {
       color: '#059669',
       icon: '🔍',
       oneLiner: '决定"做出来的东西值不值得用"',
+      oneLinerEn: 'Deciding "how do we evaluate what AI gives us"',
       definition: 'AI 协作里的质检系统：不只是看输出，还要看过程与互动。识别 AI 输出什么时候有价值、什么时候有问题。',
+      definitionEn: 'The quality control system in AI collaboration: evaluating not just outputs, but also processes and interactions. Identifying when AI output has value and when it has problems.',
       components: [
         { name: 'Product Discernment（结果判断）', desc: '检查：事实是否正确？是否适合目标受众与目的？结构是否清楚？是否满足要求？是否真正解决了问题？' },
         { name: 'Process Discernment（过程判断）', desc: '看 AI 是如何走到这个结果的。注意逻辑错误、注意力滑移、不恰当步骤、被某个细节卡住、循环论证等。' },
         { name: 'Performance Discernment（互动表现判断）', desc: '它传递信息的方式是否有助于你理解？是否对反馈反应良好？沟通是否过度复杂或过于简略？' }
+      ],
+      componentsEn: [
+        { name: 'Product Discernment', desc: 'Check: Are the facts correct? Is it appropriate for the target audience and purpose? Is the structure clear? Does it meet requirements? Does it actually solve the problem?' },
+        { name: 'Process Discernment', desc: 'Examine how AI arrived at the result. Watch for logical errors, attention drift, inappropriate steps, getting stuck on details, circular reasoning.' },
+        { name: 'Performance Discernment', desc: 'Is the way it communicates information helpful for your understanding? Does it respond well to feedback? Is the communication overly complex or too brief?' }
       ],
       commonMisconceptions: [
         'Discernment 就是查事实。其实它还包括过程与互动判断。',
         '有 AI 就不需要我懂行。课程明确：相反，越重要的任务越需要你的领域判断。',
         '发现问题就是 AI 不行。也可能是 Description 不够好，或 Delegation 一开始就错了。'
       ],
+      commonMisconceptionsEn: [
+        'Discernment is just fact-checking. It also includes process and interaction evaluation.',
+        'With AI, I don\'t need domain expertise. The course is clear: the more important the task, the more you need your own domain judgment.',
+        'Finding problems means AI is bad. It could also mean Description was insufficient, or Delegation was wrong from the start.'
+      ],
       officeMapping: [
         '建议把验收固定拆成三问：结果对吗？路径靠谱吗？互动舒服吗？',
         '很多人只会改内容，不会改互动方式。其实 performance 调好后，效率会大幅提升。'
+      ],
+      officeMappingEn: [
+        'Fix acceptance into three questions: Is the result correct? Is the approach sound? Is the interaction effective?',
+        'Many people only know how to modify content, not interaction style. Tuning performance can dramatically improve efficiency.'
       ]
     },
     {
@@ -160,20 +225,36 @@ const COURSE_DATA = {
       color: '#DC2626',
       icon: '🔒',
       oneLiner: '决定"这样做是否合适，以及谁来负责"',
+      oneLinerEn: 'Deciding "how do we ensure our interaction with AI is responsible, transparent, and accountable"',
       definition: '不是"最后看一眼"，而是从设计阶段就考虑责任与风险。让整个过程更严谨、透明、可问责。',
+      definitionEn: 'Not "a final glance," but considering responsibility and risk from the design stage. Making the entire process more rigorous, transparent, and accountable.',
       components: [
         { name: 'Creation Diligence（创建/使用前审慎）', desc: '选择使用哪个 AI 系统时，是否有意识、有批判性、有边界。关键词：系统选择、数据保护、隐私、安全、价值观对齐。' },
         { name: 'Transparency Diligence（透明审慎）', desc: '不同情境——个人、学术、创意、职业——对是否披露 AI 参与、披露到什么程度，要求可能不同。' },
         { name: 'Deployment Diligence（部署/发布审慎）', desc: '对外分享 AI 生成内容时，责任主体是你，不是 AI。要做事实核验、偏见检查、准确性确认、使用权/版权检查。' }
+      ],
+      componentsEn: [
+        { name: 'Creation Diligence', desc: 'When choosing which AI system to use, are you intentional, critical, and clear about boundaries? Key concerns: system selection, data protection, privacy, security, value alignment.' },
+        { name: 'Transparency Diligence', desc: 'Different contexts — personal, academic, creative, professional — may have different requirements for disclosing AI involvement and to what extent.' },
+        { name: 'Deployment Diligence', desc: 'When sharing AI-generated content externally, you are the responsible party, not the AI. Fact verification, bias checking, accuracy confirmation, and usage rights/copyright review are essential.' }
       ],
       commonMisconceptions: [
         'Diligence 只是法律部门的事。错，任何使用者都在做选择与承担后果。',
         '只要 AI 先写，我就不必负责。课程明确反对这一点。',
         '披露 AI 参与会显得不专业。事实上，恰当透明往往更有助于建立信任。'
       ],
+      commonMisconceptionsEn: [
+        'Diligence is only for legal departments. Wrong — every user makes choices and bears consequences.',
+        'If AI writes it first, I\'m not responsible. The course explicitly rejects this view.',
+        'Disclosing AI involvement looks unprofessional. In fact, appropriate transparency often builds greater trust.'
+      ],
       officeMapping: [
         '越自动、越独立，越要提前设计边界、日志、审计和人工兜底。',
         '为自己做一个简单 checklist：这能不能输？谁会看到？需不需要说明 AI 参与？我愿不愿意对最终结果签字？'
+      ],
+      officeMappingEn: [
+        'The more automated and independent the process, the more you need to pre-design boundaries, logging, auditing, and human fallback.',
+        'Create a simple checklist: Can this data be input? Who will see the output? Should AI involvement be disclosed? Am I willing to sign off on the final result?'
       ]
     }
   ],
